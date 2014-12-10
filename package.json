@@ -4,7 +4,8 @@
   "description": "Sandbox for testing out integration between PLM and ERP systems",
   "main": "main.js",
   "dependencies": {
-    "xml2js": "*"
+    "xml2js": "*",
+    "xml-stream" : "*"
   },
   "devDependencies": {
     "docco": "*",
@@ -15,7 +16,7 @@
     "npm": "1.1.x"
   },
   "scripts": {
-    "test": "node main.js",
+    "test": "node src/main.js",
     "docco": "docco -o docco src/*.js tests/*.js",
     "clean": "rm -rf docco"
   },

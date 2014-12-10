@@ -60,9 +60,5 @@ p('./examples/ESIResponse_UpdatedLink.xml', ['ChangedParts','ChangedBOMs', 'Unch
 //
 // There is currently only one event fired for each ChangedPart CahngedBOM etc.
 // Might need to use xml.collect('subitem'); in addition to xml.preserve('item', true);
-// to get
-//
-//
-//
-//
+// to get events for each Part within ChangedPart
 //

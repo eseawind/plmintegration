@@ -1,0 +1,32 @@
+{
+  "name": "plmintegration",
+  "version": "0.0.1",
+  "description": "Sandbox for testing out integration between PLM and ERP systems",
+  "main": "main.js",
+  "dependencies": {
+    "xml2js": "*"
+  },
+  "devDependencies": {
+    "docco": "*",
+    "tape": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=0.10.x",
+    "npm": "1.1.x"
+  },
+  "scripts": {
+    "test": "node main.js",
+    "docco": "docco -o docco src/*.js tests/*.js",
+    "clean": "rm -rf docco"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gizur/plmintegration.git"
+  },
+  "author": "Jonas Colmsjö",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gizur/plmintegration/issues"
+  },
+  "homepage": "https://github.com/gizur/plmintegration"
+}

@@ -4,7 +4,8 @@
   "description": "Sandbox for testing out integration between PLM and ERP systems",
   "main": "main.js",
   "dependencies": {
-    "xml-stream" : "*"
+    "xml-stream" : "*",
+    "zmq" : "*"
   },
   "devDependencies": {
     "docco": "*",

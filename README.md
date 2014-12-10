@@ -1,12 +1,38 @@
 PLM integration using NodeJS
 ============================
 
+This repo investigates an approach for integrating PLM systems with ERP systems
+using open source technology like NodeJS and ZeroMQ.
+
 I'm using the package `xml-stream` to parse XML files with PLM data.
 
 Just do `npm test` to parse the examples.
 
 See [the github page](https://github.com/assistunion/xml-stream) for information
 about the XML parser.
+
+
+Integration architecture
+------------------------
+
+A common approach is that the PDM tools produce the XML in files that are
+distributed one way or another.
+
+Let's build a simple integration solution with this approach:
+1. Take the XML files and parse them into JSON messages
+2. Produce a format that clients understand. I'll just use a JSON format that
+is closer to a typical ERP system
+3. Put the JSON messages on a message queue
+4. The ERP system (or an adapter sitting close to it) reads the message queue
+and forwards the messages to it using whatever API it prefers.
+
+Let's use NodeJS for both the middleware and the adapter that sits on the
+ERP system. Let's also use ZeroMQ to send the messages using a simple
+request/reply approach.
+
+Next step could be to use a publish/subscribe pattern. A even better approach
+is probably that the ERP system publish the changes performed **after** the update.
+This way are only changes accepted by the ERP system published to other systems.
 
 
 Notes

@@ -43,5 +43,26 @@ var p = function(filePath, xmlElements, cb) {
 
 p('./examples/ESIResponse_AddedComponent.xml', ['Part']);
 p('./examples/ESIResponse_InitialExport.xml', ['Part','BOMHeader']);
-p('./examples/ESIResponse_RemovedComponent.xml', ['ChangedParts','ChangedBOMs', 'UnchangedParts', 'AddedBOMs']);
+
+
+// uncomment the function to print the parsed elements
+p('./examples/ESIResponse_RemovedComponent.xml'
+  , ['ChangedParts','ChangedBOMs', 'UnchangedParts', 'AddedBOMs']
+//  , function(res) { console.log('RemovedComponent: '+JSON.stringify(res)); }
+  );
+
 p('./examples/ESIResponse_UpdatedLink.xml', ['ChangedParts','ChangedBOMs', 'UnchangedParts', 'AddedBOMs']);
+
+
+//
+// NOTES
+// -----
+//
+// There is currently only one event fired for each ChangedPart CahngedBOM etc.
+// Might need to use xml.collect('subitem'); in addition to xml.preserve('item', true);
+// to get
+//
+//
+//
+//
+//
